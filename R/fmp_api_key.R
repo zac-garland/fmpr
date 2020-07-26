@@ -20,7 +20,7 @@ fmp_url_builder <- function(...){
 
   base <- "https://financialmodelingprep.com/api/v3/"
 
-  dat_args <- paste0(base,...)
+  dat_args <- paste0(base,glue::glue(...))
 
   URLencode(dat_args)
 
