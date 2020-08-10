@@ -1,3 +1,11 @@
+#' company key metrics
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_key_metrics(ticker = "AAPL", period = "quarter")
+
 fmp_key_metrics <- function(ticker = "AAPL", period = "quarter") {
   apikey <- fmp_api_key()
 

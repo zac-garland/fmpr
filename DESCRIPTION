@@ -18,3 +18,13 @@ Language: es
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports:
+  clipr,
+  janitor,
+  lubridate,
+  magrittr,
+  styler,
+  readr,
+  tidyquant,
+  tidyverse
+

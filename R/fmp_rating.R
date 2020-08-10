@@ -1,3 +1,11 @@
+#' Company financial rating
+#'
+#' @param ticker a stock ticker
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_rating(ticker = "AAPL")
+
 fmp_rating <- function(ticker = "AAPL") {
   apikey <- fmp_api_key()
 

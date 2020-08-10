@@ -1,3 +1,11 @@
+#' company cash flow statement items
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_cash_flow_statement(ticker = "AAPL", period = "quarter")
+
 fmp_cash_flow_statement <- function(ticker = "AAPL", period = "quarter") {
   apikey <- fmp_api_key()
 
