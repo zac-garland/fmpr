@@ -14,7 +14,7 @@ fmp_data <- function(fmp_url) {
   if(Sys.getenv("fmp_show_api_call")){
     message(paste("getting data from",fmp_url))
   } else{
-    hide_key <- strsplit(test_str,"apikey=") %>%
+    hide_key <- strsplit(fmp_url,"apikey=") %>%
       unlist() %>%
       .[[1]] %>%
       paste0("apikey=apikey")
