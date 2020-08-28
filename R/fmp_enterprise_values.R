@@ -4,9 +4,9 @@
 #' @seealso https://financialmodelingprep.com/developer/docs/
 #' @export
 #' @examples
-#' fmp_enterprise_values(ticker = "AAPL", period = "quarter")
+#' fmp_enterprise_value(ticker = "AAPL", period = "quarter")
 
-fmp_enterprise_values <- function(ticker = "AAPL", period = "quarter") {
+fmp_enterprise_value <- function(ticker = "AAPL", period = "quarter") {
   apikey <- fmp_api_key()
 
   fmp_url <- fmp_url_builder(glue::glue("enterprise-values/{ticker}?period={period}&apikey={apikey}"))

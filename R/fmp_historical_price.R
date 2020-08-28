@@ -3,17 +3,20 @@
 #' @seealso https://financialmodelingprep.com/developer/docs/
 #' @export
 #' @examples
-#' fmp_historical_price(ticker = "AAPL", timeseries = 5)
+#' fmp_historical_price(ticker = "AAPL")
 
-fmp_historical_price <- function(ticker = "AAPL", timeseries = 5) {
+fmp_historical_price <- function(ticker = "AAPL", start_date = NULL, end_date = NULL) {
   apikey <- fmp_api_key()
 
-  if(missing(timeseries)){
-    fmp_url <- fmp_url_builder(glue::glue("historical-price-full/{ticker}?&apikey={apikey}"))
-  } else{
-    fmp_url <- fmp_url_builder(glue::glue("historical-price-full/{ticker}?timeseries={timeseries}&apikey={apikey}"))
+  if(is.null(start_date)) start_date <- (Sys.Date() - 3650)
+  if(is.null(end_date)) end_date <- Sys.Date()
 
-  }
+  start_date <- as.character(start_date)
+  end_date <- as.character(end_date)
+
+
+  fmp_url <- fmp_url_builder(glue::glue("historical-price-full/{ticker}?from={start_date}&to={end_date}&apikey={apikey}"))
+
 
 
 

@@ -4,7 +4,7 @@
 \alias{fmp_historical_price}
 \title{historical price with row filter}
 \usage{
-fmp_historical_price(ticker = "AAPL", timeseries = 5)
+fmp_historical_price(ticker = "AAPL", start_date = NULL, end_date = NULL)
 }
 \arguments{
 \item{timeseries}{number of records to return}
@@ -13,7 +13,7 @@ fmp_historical_price(ticker = "AAPL", timeseries = 5)
 historical price with row filter
 }
 \examples{
-fmp_historical_price(ticker = "AAPL", timeseries = 5)
+fmp_historical_price(ticker = "AAPL")
 }
 \seealso{
 https://financialmodelingprep.com/developer/docs/
