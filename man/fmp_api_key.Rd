@@ -4,7 +4,7 @@
 \alias{fmp_api_key}
 \title{sets fmp api key}
 \usage{
-fmp_api_key(api_key)
+fmp_api_key(api_key = NULL)
 }
 \arguments{
 \item{api_key}{your api key}
@@ -13,7 +13,7 @@ fmp_api_key(api_key)
 sets fmp api key
 }
 \examples{
-fmp_api_key(api_key)
+fmp_api_key("demo")
 }
 \seealso{
 https://financialmodelingprep.com/developer/docs/

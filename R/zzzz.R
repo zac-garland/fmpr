@@ -3,19 +3,19 @@
 #' @seealso https://financialmodelingprep.com/developer/docs/
 #' @export
 #' @examples
-#' fmp_api_key(api_key)
+#' fmp_api_key("demo")
 
-fmp_api_key <- function(api_key) {
-  if (!missing(api_key)) {
+fmp_api_key <- function(api_key = NULL) {
+  if (!is.null(api_key)) {
     Sys.setenv(fmp_api_key = api_key)
+  } else if(Sys.getenv("fmp_api_key") == ""){
+    message('using demo api key. \n please set your api key using: fmp_api_key("api_key")')
+    Sys.setenv(fmp_api_key = "demo")
   }
 
   api_key <- Sys.getenv("fmp_api_key")
 
-  if(is.null(api_key))
-    stop('please set your api key using: fmp_api_key("api_key")')
-  else
-    invisible(api_key)
+  invisible(api_key)
 
 }
 
