@@ -1,0 +1,90 @@
+#' current discount cash flow valuation
+#' @param ticker a stock ticker
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_discounted_cash_flow(ticker = "AAPL")
+
+fmp_discounted_cash_flow <- function(ticker = "AAPL") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("discounted-cash-flow/{ticker}?apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
+#' historical enterprise value
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_enterprise_value(ticker = "AAPL", period = "quarter")
+
+fmp_enterprise_value <- function(ticker = "AAPL", period = "quarter") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("enterprise-values/{ticker}?period={period}&apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
+#' historical growth metrics
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_financial_growth(ticker = "AAPL", period = "quarter")
+
+fmp_financial_growth <- function(ticker = "AAPL", period = "quarter") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("financial-growth/{ticker}?period={period}&apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
+#' historical discounted cash flow valuation
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_historical_discounted_cash_flow(ticker = "AAPL", period = "quarter")
+
+fmp_historical_discounted_cash_flow <- function(ticker = "AAPL", period = "quarter") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("historical-discounted-cash-flow/{ticker}?period={period}&apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
+#' company key metrics
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_key_metrics(ticker = "AAPL", period = "quarter")
+
+fmp_key_metrics <- function(ticker = "AAPL", period = "quarter") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("key-metrics/{ticker}?period={period}&apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
+#' Company financial ratios
+#'
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_ratios(ticker = "AAPL", period = "quarter")
+
+fmp_ratios <- function(ticker = "AAPL", period = "quarter") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("ratios/{ticker}?period={period}&apikey={apikey}"))
+
+  fmp_data(fmp_url)
+}
