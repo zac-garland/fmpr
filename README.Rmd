@@ -8,6 +8,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  eval = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -17,12 +18,12 @@ knitr::opts_chunk$set(
 
 The goal of fmpr is to provide a lightweight R interface to the Financial Modeling Prep API
 
-##### Installation
+### Installation
 
-You can install the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/zac-garland/fmpr) with:
 
 ```{r, eval=FALSE}
-#### install.packages("devtools")
+## install.packages("devtools")
 devtools::install_github("zac-garland/fmpr")
 ```
 
@@ -32,117 +33,75 @@ library(fmpr)
 ```
 
 
-#### set api key
+## set api key
 
 ```{r, eval=FALSE}
 fmp_api_key("demo")
 ```
 
-#### Balance Sheet
 
 
-```{r, eval=FALSE}
-fmp_balance_sheet(ticker = "AAPL", period = "quarter")  
-```
+## company meta data
+```{r}
+fmp_company_profile(ticker = "AAPL")
 
-#### Cash Flow Statement
+fmp_historical_earning_calendar(ticker = "AAPL")
 
+fmp_rating(ticker = "AAPL")
 
-```{r, eval=FALSE}
-fmp_cash_flow_statement(ticker = "AAPL", period = "quarter")  
-```
-
-
-#### Company Profile
-
-```{r, eval=FALSE}
-fmp_company_profile(ticker = "AAPL")  
-```
-
-#### Discounted Cash Flow
-
-```{r, eval=FALSE}
-fmp_historical_discounted_cash_flow(ticker = "AAPL")  
 ```
 
 
 
-#### Enterprise Value
-```{r, eval=FALSE}
-fmp_enterprise_value(ticker = "AAPL", period = "quarter")  
+## financial statements
+
+```{r}
+fmp_balance_sheet(ticker = "AAPL", period = "quarter")
+
+fmp_cash_flow_statement(ticker = "AAPL", period = "quarter")
+
+fmp_income_statement(ticker = "AAPL", period = "quarter")
+
+```
+
+## financial metrics
+
+
+```{r}
+fmp_discounted_cash_flow(ticker = "AAPL")
+
+fmp_enterprise_value(ticker = "AAPL", period = "quarter")
+
+fmp_financial_growth(ticker = "AAPL", period = "quarter")
+
+fmp_historical_discounted_cash_flow(ticker = "AAPL", period = "quarter")
+
+fmp_key_metrics(ticker = "AAPL", period = "quarter")
+
+fmp_ratios(ticker = "AAPL", period = "quarter")
+
+
 ```
 
 
-#### Financial Growth
-```{r, eval=FALSE}
-fmp_financial_growth(ticker = "AAPL", period = "quarter")  
-```
-
-#### Historical Discounted Cash Flow
-
-```{r, eval=FALSE}
-fmp_historical_discounted_cash_flow(ticker = "AAPL", period = "quarter")  
-```
-
-#### Historical Earning Calendar
-
-```{r, eval=FALSE}
-fmp_historical_earning_calendar(ticker = "AAPL")  
-```
-
-#### Historical Price
-
-```{r, eval=FALSE}
-fmp_historical_price(ticker = "AAPL",start_date = as.Date("2019-01-01"))  
-```
-
-#### Income Statement
-
-```{r, eval=FALSE}
-fmp_income_statement(ticker = "AAPL", period = "quarter")  
-```
-
-#### Intraday
-
-```{r, eval=FALSE}
-fmp_intraday(ticker = "AAPL", freq = "1min")  
-```
-
-#### Key Metrics
-
-```{r, eval=FALSE}
-fmp_key_metrics(ticker = "AAPL", period = "quarter")  
-```
-
-#### Quote
-
-```{r, eval=FALSE}
-fmp_quote(ticker = "AAPL")  
-```
 
 
-#### Rating
+## stock prices
 
-```{r, eval=FALSE}
-fmp_rating(ticker = "AAPL")  
-```
+```{r}
+fmp_intraday(ticker = "AAPL", freq = "1min")
 
-#### Ratios
+fmp_historical_price(ticker = "AAPL")
 
-```{r, eval=FALSE}
-fmp_ratios(ticker = "AAPL", period = "quarter")  
-```
+fmp_quote(ticker = "AAPL")
 
-#### Stock Dividend
+fmp_quote_short(ticker = "AAPL")
 
-```{r, eval=FALSE}
-fmp_stock_dividend(ticker = "AAPL")  
-```
+fmp_stock_dividend(ticker = "AAPL")
 
-#### Stock Split
+fmp_stock_split(ticker = "AAPL")
 
-```{r, eval=FALSE}
-fmp_stock_split(ticker = "AAPL")  
+
 ```
 
 
