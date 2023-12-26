@@ -83,7 +83,7 @@ fmp_data <- function(fmp_url) {
 
   }
 
-  df %>%
+  df <- df %>%
     dplyr::as_tibble() %>%
     janitor::clean_names() %>%
     dplyr::mutate_all(as.character) %>%
@@ -93,6 +93,12 @@ fmp_data <- function(fmp_url) {
            dplyr::contains("date"),
            which(sapply(.,class)=="numeric"),
            dplyr::everything())
+
+  if("date" %in% names(df)){
+    df <- df %>% dplyr::arrange(date)
+  }
+
+  df
 
 }
 #' Pipe
