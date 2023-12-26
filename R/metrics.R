@@ -102,7 +102,7 @@ fmp_ratios <- function(ticker = "AAPL", period = "quarter") {
 fmp_shares_float <- function(ticker = "AAPL") {
   apikey <- fmp_api_key()
 
-  fmp_url <- fmp_url_builder(glue::glue("shares_float/?symbol={ticker}&apikey={apikey}"),version = 4)
+  fmp_url <- fmp_url_builder(glue::glue("historical/shares_float/?symbol={ticker}&apikey={apikey}"),version = 4)
 
   fmp_data(fmp_url)
 }
