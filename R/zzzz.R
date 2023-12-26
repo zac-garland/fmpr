@@ -20,9 +20,9 @@ fmp_api_key <- function(api_key = NULL) {
 }
 
 
-fmp_url_builder <- function(...){
+fmp_url_builder <- function(...,version = 3){
 
-  base <- "https://financialmodelingprep.com/api/v3/"
+  base <- glue::glue("https://financialmodelingprep.com/api/v{version}/")
 
   dat_args <- paste0(base,...)
 

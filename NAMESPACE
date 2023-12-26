@@ -2,6 +2,7 @@
 
 export("%>%")
 export(fmp_analyst_estimates)
+export(fmp_analyst_upgrades)
 export(fmp_api_key)
 export(fmp_balance_sheet)
 export(fmp_cash_flow_statement)
