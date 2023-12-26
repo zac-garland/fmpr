@@ -88,3 +88,21 @@ fmp_ratios <- function(ticker = "AAPL", period = "quarter") {
 
   fmp_data(fmp_url)
 }
+
+
+#' Company Share Floats
+#'
+#' @param ticker a stock ticker
+#' @param period reporting period, quarter or annual
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_shares_float(ticker = "AAPL")
+
+fmp_shares_float <- function(ticker = "AAPL") {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("shares_float/?symbol={ticker}&apikey={apikey}"),version = 4)
+
+  fmp_data(fmp_url)
+}

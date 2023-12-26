@@ -2,7 +2,7 @@
 % Please edit documentation in R/estimates.R
 \name{fmp_analyst_upgrades}
 \alias{fmp_analyst_upgrades}
-\title{Company financial ratios}
+\title{Company analyst upgrades downgrades}
 \usage{
 fmp_analyst_upgrades(ticker = "AAPL")
 }
@@ -10,7 +10,7 @@ fmp_analyst_upgrades(ticker = "AAPL")
 \item{ticker}{a stock ticker}
 }
 \description{
-Company financial ratios
+Company analyst upgrades downgrades
 }
 \examples{
 fmp_analyst_upgrades(ticker = "AAPL")

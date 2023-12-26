@@ -2,7 +2,7 @@
 % Please edit documentation in R/estimates.R
 \name{fmp_analyst_estimates}
 \alias{fmp_analyst_estimates}
-\title{Company financial ratios}
+\title{Company analyst estimates}
 \usage{
 fmp_analyst_estimates(ticker = "AAPL", period = "quarter")
 }
@@ -12,7 +12,7 @@ fmp_analyst_estimates(ticker = "AAPL", period = "quarter")
 \item{period}{reporting period, quarter or annual}
 }
 \description{
-Company financial ratios
+Company analyst estimates
 }
 \examples{
 fmp_analyst_estimates(ticker = "AAPL", period = "quarter")

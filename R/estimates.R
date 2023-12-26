@@ -1,4 +1,4 @@
-#' Company financial ratios
+#' Company analyst estimates
 #'
 #' @param ticker a stock ticker
 #' @param period reporting period, quarter or annual
@@ -16,7 +16,7 @@ fmp_analyst_estimates <- function(ticker = "AAPL", period = "quarter") {
 }
 
 
-#' Company financial ratios
+#' Company analyst upgrades downgrades
 #'
 #' @param ticker a stock ticker
 #' @seealso https://financialmodelingprep.com/developer/docs/
