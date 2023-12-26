@@ -53,6 +53,7 @@ fmp_data <- function(fmp_url) {
     message(paste("getting data from",hide_key))
   }
 
+
   df <- jsonlite::fromJSON(fmp_url)
 
   any_list_cols <- df %>%
