@@ -58,3 +58,19 @@ fmp_historical_employment <- function(ticker = "AAPL") {
 
   fmp_data(fmp_url)
 }
+
+#' Company historical sentiment
+#'
+#' @param ticker a stock ticker
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_historical_sentiment(ticker = "AAPL")
+
+fmp_historical_sentiment <- function(ticker = "AAPL",page = 0) {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("historical/social-sentiment?symbol={ticker}&page={as.character(page)}&apikey={apikey}"),version = 4)
+
+  fmp_data(fmp_url)
+}
