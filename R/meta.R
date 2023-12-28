@@ -74,3 +74,19 @@ fmp_historical_sentiment <- function(ticker = "AAPL",page = 0) {
 
   fmp_data(fmp_url)
 }
+
+
+#' S&P 500 constituents
+#'
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_sp500_constituents()
+
+fmp_sp500_constituents <- function() {
+  apikey <- fmp_api_key()
+
+  fmp_url <- fmp_url_builder(glue::glue("sp500_constituent?apikey={apikey}"),version = 3)
+
+  fmp_data(fmp_url)
+}
