@@ -106,3 +106,19 @@ fmp_shares_float <- function(ticker = "AAPL") {
 
   fmp_data(fmp_url)
 }
+
+
+#' Market Cap
+#'
+#' @param ticker a stock ticker
+#' @seealso https://financialmodelingprep.com/developer/docs/
+#' @export
+#' @examples
+#' fmp_historical_market_cap(ticker = "AAPL")
+
+fmp_historical_market_cap <- function(ticker = "AAPL") {
+  apikey <- fmp_api_key()
+  fmp_url <- fmp_url_builder(glue::glue("historical-market-capitalization/{ticker}?limit=1650&apikey={apikey}"),version = 3)
+
+  fmp_data(fmp_url)
+}
